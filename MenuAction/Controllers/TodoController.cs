@@ -13,12 +13,12 @@ namespace TodoApi.Controllers {
         private readonly TodoContext _context;
         public TodoController(TodoContext context) {
             _context = context;
-            if (_context.TodoItems.Count() == 0)
-            {
-                // Create a new TodoItem if collection is empty,
-                // which means you can't delete all TodoItems. 
-                _context.TodoItems.Add(new TodoItem { Name = "Item1" });
-                _context.SaveChanges(); }
+            //if (_context.TodoItems.Count() == 0)
+            //{
+            //    // Create a new TodoItem if collection is empty,
+            //    // which means you can't delete all TodoItems. 
+            //    _context.TodoItems.Add(new TodoItem { Name = "Item1" });
+            //    _context.SaveChanges(); }
         }
 
 
@@ -28,7 +28,14 @@ namespace TodoApi.Controllers {
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+          return  _context.frmMenuInfo.Select(s=>s.MenuName);
+           // return new string[] { "value1", "value2" };
+        }
+
+        [HttpPost]
+        public int Post(int x)
+        {
+            return x;
         }
 
     }

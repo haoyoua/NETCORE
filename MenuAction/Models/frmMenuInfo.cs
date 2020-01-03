@@ -7,6 +7,7 @@ namespace MenuAction.Models
 {
     public class frmMenuInfo 
     {
+        public int ID { get; set; }
         public string MenuName { get; set; }
     }
 }

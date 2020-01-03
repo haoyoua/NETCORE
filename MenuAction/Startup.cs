@@ -47,8 +47,8 @@ namespace MenuAction
             });
 
 
-            services.AddDbContext<TodoContext>(opt =>
-              opt.UseInMemoryDatabase("TodoList"));
+            //services.AddDbContext<TodoContext>(opt =>
+            //  opt.UseInMemoryDatabase("TodoList"));
 
 
             services.AddDbContext<TodoContext>(opt =>
